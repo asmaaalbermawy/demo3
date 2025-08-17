@@ -1,0 +1,116 @@
+/* da Prevent page scroll */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.chat-window {
+  width: 550px;
+  max-width: 95%; 
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  background-color: #fafafa;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.bubble {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.bubble.user {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+.bubble.bot {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+}
+
+.bubble-img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  gap: 5px;
+  box-sizing: border-box;
+  flex-wrap: wrap; 
+}
+
+.input-area input[type="text"] {
+  flex: 1 1 200px; 
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 0;
+}
+
+.input-area input[type="file"] {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #6f42c1; /* purple background */
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.input-area input[type="file"]:hover {
+  background-color: #5a32a3;
+}
+
+.input-area button {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #6f42c1; /* purple background */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.input-area button:hover {
+  background-color: #5a32a3;
+}
+
+.input-area button:active {
+  transform: scale(0.95);
+}
+
+/* Bubble animation */
+@keyframes bubbleFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
